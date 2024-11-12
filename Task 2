@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+    float amount, discount, finalAmount;
+    
+    // Input: Amount spent by the customer
+    printf("Enter the amount spent: ");
+    scanf("%f", &amount);
+    
+    // Calculate discount based on the amount
+    if (amount >= 500) {
+        // If amount is $500 or more, apply 10% + additional 5% discount
+        discount = 0.10 * amount + 0.05 * (amount - 0.10 * amount);  // 5% discount on the discounted price
+    } 
+    else if (amount >= 100) {
+        // If amount is $100 or more, apply 10% discount
+        discount = 0.10 * amount;
+    } 
+    else {
+        // No discount if amount is less than $100
+        discount = 0.0;
+    }
+    
+    // Calculate final amount after discount
+    finalAmount = amount - discount;
+    
+    // Output the results
+    printf("Original amount: $%.2f\n", amount);
+    printf("Discount applied: $%.2f\n", discount);
+    printf("Final amount after discount: $%.2f\n", finalAmount);
+    
+    return 0;
+}
